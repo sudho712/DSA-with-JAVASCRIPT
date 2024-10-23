@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      /* let data = [5, 10, 15, 20, 25, 30, 35];
+      let pos = 3;
+      for (let i = pos; i < data.length; i++) {
+
+        console.warn(data[i]);
+      } */
+
+      function removeEl() {
+        let data = [5, 10, 15, 20, 25, 30, 35];
+        let pos = document.getElementById("pos").value;
+        pos = parseInt(pos);
+        for (let i = pos; i < data.length-1; i++) {
+          data[i] = data[i+1];
+        }
+        data.length=data.length-1;
+        console.warn(data)
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="pos" placeholder="Enter position" />
+    <button onclick="removeEl()">Remove Element</button>
+  </body>
+</html>

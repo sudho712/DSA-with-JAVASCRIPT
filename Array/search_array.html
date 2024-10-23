@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search data</title>
+    <script>
+      let data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+      let item = 9;
+      let index = undefined;
+
+      // Loop through the entire array
+      for (let i = 0; i < data.length-1; i++) {
+        if (data[i] === item) {
+          index = i;
+            break;
+        }
+      }
+      
+      console.warn(index);
+    </script>
+  </head>
+  <body></body>
+</html>
