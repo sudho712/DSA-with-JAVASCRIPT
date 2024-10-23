@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Arrow traversing</title>
+    <script>
+      let data = [44, 9, 10, 11, 12,1, 2, 3, 4, 5, 6, 7, 8,  13, 14, 15];
+      /*  for(let i=0; i<data.length;i++)
+        {
+             document.write(data[i]) 
+            document.write(`${data[i]} <br>`); 
+            let x=0;
+            document.write(data[x]);
+        }  */
+
+      function getElement() {
+        let el = document.getElementById("element").value;
+        if (el < data.length && typeof parseInt(el)==="number") {//parse int define validation  of alphabet etc
+          
+          alert(data[el]);
+        } else {
+          alert("please valid input");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getElement()">getElement</button>
+  </body>
+</html>
