@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merge two array</title>
+    <script>
+      let data = [1, 2, 3, 4, 5];
+      let data2 = [6, 7, 8, 9, 10];
+      let merge_data = [];
+      for (i = 0; i < data.length; i++) 
+      {
+        merge_data[i] = data[i];
+      }
+      for(i=0;i<data.length;i++)
+      {
+        merge_data[data.length+i]=data2[i];
+      }
+      console.warn(merge_data);
+    </script>
+
+<!-- 
+let rev=[1,2,3,4,5]
+rev.reverse()
+
+let rev=[1,2,3]
+let rev2=[9,8,7]
+let rev3=[rev,rev2]
+-->
+
+  </head>
+  <body>
+    <h1>Mege data</h1>
+    <input type="text" placeholder="Merge data">
+    <button>
+
+    </button>
+  </body>
+</html>

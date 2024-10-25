@@ -3,7 +3,7 @@
   <head>
     <title>Search data</title>
     <script>
-      let data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+      /*       let data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
       let item = 9;
       let index = undefined;
 
@@ -13,10 +13,31 @@
           index = i;
             break;
         }
-      }
-      
+      } */
+
       console.warn(index);
+      function searchElement() {
+        let data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+        let item = document.getElementById("SearchElement").value;
+        let index = -1;
+
+        // Loop through the entire array
+        for (let i = 0; i <= data.length - 1; i++) {
+          if (data[i] == item) {
+            index = i;
+            break;
+          }
+        }
+        console.warn(index)
+      }
     </script>
   </head>
-  <body></body>
+  <body>
+    <input
+      type="text"
+      id="SearchElement"
+      placeholder="Enter value for search"
+    />
+    <button onclick="searchElement()">Search Element</button>
+  </body>
 </html>
