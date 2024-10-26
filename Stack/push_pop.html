@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stack puch()</title>
+    <script>
+      let data = [];
+      let currentSize = data.length;
+      let max = 5;
+      function push(newVal) {
+        if(currentSize>=max)
+      {
+        alert("Stack is full");
+      }
+        data[currentSize] = newVal;
+        currentSize++;
+      }
+
+      function pop()
+      {
+        if(currentSize>0)
+      {
+        currentSize-=1;
+        data.length=currentSize;
+      }
+      else{
+        alert("Stack is all ready empty")
+      }
+      }
+      push(208);
+      push(25);
+      push(22);
+      push(22);
+      
+      pop()
+      pop()
+      pop()
+      pop()
+      pop()      
+      console.warn(data);
+    </script>
+  </head>
+  <body></body>
+</html>
