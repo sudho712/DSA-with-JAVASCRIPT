@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        let money =100;
+        let total_apple=0;
+
+        function buyApple(x)
+        {
+            if(x>0)            
+        {
+            total_apple++;
+            console.warn("I have", x, "RS",total_apple)
+            buyMore(x)         
+        }
+        else{
+            console.earn("I dont have more money",total_apple)
+        }
+            
+            /* console.warn(x); */
+        }
+        function buyMore(x)
+        {
+            total_apple++;
+            buyApple(x-15)
+        }
+        buyApple(money)
+        
+    </script>
+</head>
+<body>
+    <h1>indirect recursion</h1>
+</body>
+</html>
