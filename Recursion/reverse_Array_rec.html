@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reverse Array Rec</title>
+    <script>
+      let data = [111, 20, 3, 40, 5, 6, 7, 8, 9];
+      let temp;
+
+      function customRev(data, start, end) {
+        console.warn(data);
+        if (start <= end) {
+          temp = data[start];
+          data[start] = data[end];
+          data[end] = temp;
+
+          customRev(data, start + 1, end - 1);
+        }
+      }
+      customRev(data, 0, data.length - 1);
+    </script>
+  </head>
+  <body>
+    <h1>Reverse Array Wit Rec</h1>
+  </body>
+</html>
