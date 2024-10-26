@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script>
+      let data = [];
+      let currentSize = 0;
+      
+      function push(newVal) {
+        data[currentSize] = newVal;
+        currentSize++;
+      }
+      
+      function pop() {
+        if (currentSize > 0) {
+          currentSize--;
+          const lastRemovedItem = data[currentSize];
+          data.length = currentSize;  // Adjust length to remove the popped item
+          return lastRemovedItem;
+        }
+      }
+
+      function reverseStr(item) {
+        // Push each character to the stack
+        for (let i = 0; i < item.length; i++) {
+          push(item[i]);
+        }
+        
+        // Pop each character from the stack to reverse
+        for (let i = 0; i < item.length; i++) {
+          console.warn(pop());
+        }
+      }
+
+      let str = "rajak";
+      str = str.split("");
+      reverseStr(str);
+      console.warn("Stack after operations:", data);  // Shows the stack after all pops
+    </script>
+  </head>
+  <body>
+    <h1>Reverse Stack</h1>
+  </body>
+</html>
