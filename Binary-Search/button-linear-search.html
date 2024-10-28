@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Linear search</title>
+    <script>
+      function searchEl() {
+        let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let find = document.getElementById("el").value;
+        let pos = undefined;
+        for (let i = 0; i <= data.length; i++) {
+          if (data[i] == find) {
+            pos = i;
+
+            break;
+          }
+        }
+
+        console.warn(pos);
+        if (!pos) {
+          alert("Element is not found");
+        }else{
+            alert("Element position : "+pos+ "element is"+data[pos]);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>linear search</h1>
+    <input type="text" id="el" placeholder="Enter Element to search" />
+    <button onclick="searchEl()">Search Element</button>
+  </body>
+</html>
+
+<!-- 
+search one line in every  
+-->
