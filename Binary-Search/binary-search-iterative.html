@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Binary Search</title>
+    <script>
+      function binarySearch() {
+        // Sorted array
+        let data = [1, 21, 3, 4, 55, 6, 7, 8, 9, 10];
+        let find = parseInt(document.getElementById("el").value); // Parse input to integer
+        let left = 0;
+        let right = data.length - 1;
+        let pos = -1;
+
+        // Iterative binary search
+        while (left <= right) {
+          let mid = Math.floor((left + right) / 2);
+
+          if (data[mid] === find) {
+            pos = mid; // Element found
+            break;
+          } else if (data[mid] < find) {
+            left = mid + 1; // Search in the right half
+          } else {
+            right = mid - 1; // Search in the left half
+          }
+        }
+
+        // Show result
+        if (pos === -1) {
+          alert("Element not found");
+        } else {
+          alert("Element " + data[pos] + " found at position: " + pos);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Binary Search</h1>
+    <input type="text" id="el" placeholder="Enter element to search" />
+    <button onclick="binarySearch()">Search Element</button>
+  </body>
+</html>
