@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recursive</title>
+    <script>
+      let data = [10, 15, 25, 30, 35];
+      let start = 0;
+      let end = data.length - 1;
+      find = 10;
+      let pos = undefined;
+      function RBS(data, start, end) {
+        mid = Math.floor((start + end) / 2);
+        //console.warn(data[mid])
+        if (data[mid] == find) {
+          pos = mid;
+          return true;
+        } else if (data[mid] < find) {
+          RBS(data, mid + 1, end);
+        } else {
+          RBS(data, start, mid - 1);
+        }
+      }
+
+      RBS(data, start, end);
+      console.warn(pos);
+    </script>
+  </head>
+  <body>
+    <h1>Binary Search</h1>
+  </body>
+</html>

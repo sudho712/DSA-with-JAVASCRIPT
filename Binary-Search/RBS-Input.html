@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recursive Binary Search</title>
+    <script>
+      let data = [10, 15, 25, 30, 35];
+      let pos = -1;
+
+      function RBS(data, start, end, find) {
+        if (start > end) {
+          return false;
+        }
+
+        let mid = Math.floor((start + end) / 2);
+
+        if (data[mid] == find) {
+          pos = mid;
+          return true;
+        } else if (data[mid] < find) {
+          return RBS(data, mid + 1, end, find);
+        } else {
+          return RBS(data, start, mid - 1, find);
+        }
+      }
+
+      function searchElement() {
+        pos = -1; // Reset position
+        let find = parseInt(document.getElementById("SEL").value);
+
+        if (RBS(data, 0, data.length - 1, find)) {
+          document.getElementById("result").textContent = `Element found at position: ${pos}`;
+        } else {
+          document.getElementById("result").textContent = "Element not found";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Binary Search</h1>
+    <input type="text" id="SEL" placeholder="Enter element to search">
+    <button onclick="searchElement()">Search Element</button>
+    <p id="result"></p>
+  </body>
+</html>
