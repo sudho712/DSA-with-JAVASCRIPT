@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selection Sort</title>
+    <script>
+      let items = [20, 12, 15, 53, 33];
+
+      function selectionSort(data) {
+        for (let i = 0; i < data.length - 1; i++) {
+          let minIndex = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] < data[minIndex]) {
+              minIndex = j;
+            }
+          }
+          // Swap the found minimum element with the first element
+          let temp = data[i];
+          data[i] = data[minIndex];
+          data[minIndex] = temp;
+        }
+        return data;
+      }
+
+      // Sort the array and log the sorted items
+      let sortedItems = selectionSort(items);
+      console.log("Sorted array:", sortedItems);
+    </script>
+  </head>
+  <body>
+    <h1>Selection Sort</h1>
+  </body>
+</html>
