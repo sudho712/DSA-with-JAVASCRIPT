@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selection Sort</title>
+    <script>
+      function selectionSort(data) {
+        for (let i = 0; i < data.length - 1; i++) {
+          let minIndex = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] < data[minIndex]) {
+              minIndex = j;
+            }
+          }
+          // Swap the found minimum element with the first element
+          let temp = data[i];
+          data[i] = data[minIndex];
+          data[minIndex] = temp;
+        }
+        return data;
+      }
+
+      function sortInputArray() {
+        const input = document.getElementById("arrayInput").value;
+        let items = input.split(",").map(Number); // Convert input to an array of numbers
+        let sortedItems = selectionSort(items);
+        document.getElementById("result").textContent = "Sorted array: " + sortedItems.join(", ");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Selection Sort</h1>
+    <label for="arrayInput">Enter numbers separated by commas:</label>
+    <input type="text" id="arrayInput" placeholder="e.g., 20, 12, 15, 53, 33">
+    <button onclick="sortInputArray()">Sort</button>
+    <p id="result"></p>
+  </body>
+</html>
