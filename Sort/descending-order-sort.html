@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ascending order sort</title>
+    <script>
+      let items = [5, 4, 6, 2, 7, 9, 2, 6, 66, 55, 11, 22, 98];
+      function selectionSort(data) {
+        let minId;
+        for (let i = data.length-1; i >=0; i++) {
+          minId = i;
+          for (let j = i - 1; j >=0; j--) {
+            if (data[j] < data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+      selectionSort(items);
+      console.warn(items);
+    </script>
+  </head>
+  <body>
+    <h1> Acceding order selection Sort</h1>
+  </body>
+</html>
